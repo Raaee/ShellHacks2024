@@ -28,7 +28,7 @@ public class KitsuneAttacks : MonoBehaviour
     {
         score.OnSpeedUpInterval.AddListener(SpeedUpProjectiles);
         score.OnSpawnProjectile2.AddListener(Spawn2Projectile);
-        currentProjSpeed = projectile.GetComponent<Projectile>().GetCurrentSpeed();
+        currentProjSpeed = (int)projectile.GetComponent<NewProjectile>().GetCurrentSpeed();
         SpawnProjectile();
 
     }
@@ -42,18 +42,16 @@ public class KitsuneAttacks : MonoBehaviour
 
             float randomYpos = Random.Range(minLimitSpawn.localPosition.y, maxLimitSpawn.localPosition.y);
             projectile1GO.transform.position = new Vector3(startingXPos.transform.localPosition.x, randomYpos, 0f);
-            Projectile proj1 = projectile1GO.GetComponent<Projectile>();
+            NewProjectile proj1 = projectile1GO.GetComponent<NewProjectile>();
             //proj1.Stop();
             
             proj1.IncreaseSpeed(currentProjSpeed);
-            proj1.Move();
             if (is25Seconds)
             {
                 GameObject projectile2GO = Instantiate(projectile2, projectilesParentObject);
                 projectile2GO.transform.position = startingXPos.transform.position;
-                Projectile proj2 = projectile2GO.GetComponent<Projectile>();
+                NewProjectile proj2 = projectile2GO.GetComponent<NewProjectile>();
                 is25Seconds = false;
-                proj2.Move();
             }
             
 

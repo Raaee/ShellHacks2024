@@ -11,13 +11,14 @@ using UnityEngine.InputSystem;
 public class NewProjectile : MonoBehaviour
 {
     [SerializeField] private float projectileSpeed = 10f; // The speed of the projectile.
-    [SerializeField]private float lifeTime = 10f; // The maximum lifetime of the projectile.
+    [SerializeField] private float lifeTime = 10f; // The maximum lifetime of the projectile.
     public int CurrentDamage { get; set; } // current damage the projectile does
 
     private const string Kitsune_Proj_TAG = "Kitsune Projectile"; // Tag used to identify enemies.
     private const string PLAYER_TAG = "Player"; // Tag used to identify the player.
     private const string Player_Proj_TAG = "Player Projectile"; // Tag used to identify the crystal.
     private Vector2 moveDirection;
+    [SerializeField] private FireDirection fireDirection;
 
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
@@ -29,6 +30,9 @@ public class NewProjectile : MonoBehaviour
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
+    }
+    void Start() {
+        DetermineMovDirection();
     }
    
 
@@ -59,7 +63,16 @@ public class NewProjectile : MonoBehaviour
     }
 
     // Sets the direction in which the projectile should move.
-   
+   private void DetermineMovDirection() {
+        switch(fireDirection) {
+            case FireDirection.LEFT:
+                moveDirection = Vector2.left;
+                break;
+            case FireDirection.RIGHT:
+                moveDirection = Vector2.right;
+                break;
+        }
+    }
 
     // OnTriggerEnter2D is called when the Collider2D other enters the trigger (2D physics only).
     private void OnTriggerEnter2D(Collider2D collider)
@@ -135,4 +148,15 @@ public class NewProjectile : MonoBehaviour
     {
         lifeTime = life;
     }
+    public float GetCurrentSpeed() {
+        return projectileSpeed;
+    }
+    public void IncreaseSpeed(int newSpeed) {
+        projectileSpeed = newSpeed;
+        Debug.Log("Speed" + projectileSpeed);
+    }
+}
+public enum FireDirection {
+    LEFT,
+    RIGHT
 }

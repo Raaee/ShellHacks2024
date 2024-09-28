@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 35
   lifeTime: 10
+  fireDirection: 1
   OnProjectileDisabled:
     m_PersistentCalls:
       m_Calls: []

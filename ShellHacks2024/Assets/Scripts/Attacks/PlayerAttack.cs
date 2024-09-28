@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 public class PlayerAttack : Ability
 {
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private int maxPiercingAmount = 1;
     private InputManager inputManager;
     [SerializeField] private bool isPlayerShooting;
     [SerializeField] private Transform firePoint;

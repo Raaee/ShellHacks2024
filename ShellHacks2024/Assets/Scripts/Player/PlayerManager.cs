@@ -12,16 +12,10 @@ public class PlayerManager : MonoBehaviour
     [HideInInspector] public PlayerHealthPoints hp { get; set; }
     [SerializeField] private GameObject deathPanel;
     [SerializeField] private Transform spawnPoint;
-    [SerializeField] private GameObject reviveParticles;
-    [SerializeField] string reviveParticleGOName;
     [SerializeField] private float reviveTime = 1f;
     private GameObject deathPanelClone;
 
     [HideInInspector] public UnityEvent OnRevive;
-
-    private Animator animator;
-    private const string DEATH = "Death";
-    private const string RESPAWN = "Respawn";
 
     private void Awake()
     {
@@ -32,20 +26,16 @@ public class PlayerManager : MonoBehaviour
     {
         Components();
         hp.OnDead.AddListener(Death);
-        reviveParticles.SetActive(false);
         Respawn();
     }
 
     private void Components()
     {
         hp = player.GetComponent<PlayerHealthPoints>();
-        animator = player.GetComponent<Animator>();
-        reviveParticles = GameObject.Find(reviveParticleGOName);
     }
 
     public void Death()
     {
-        animator.Play(DEATH);
         StartCoroutine(WaitBeforeDisable());
     }
 
@@ -54,8 +44,6 @@ public class PlayerManager : MonoBehaviour
     {
         player.transform.position = spawnPoint.transform.position;
         player.SetActive(true);
-        StartCoroutine(Revive());
-        animator.Play(RESPAWN);
         hp.ResetHealth();
 
     }
@@ -70,15 +58,7 @@ public class PlayerManager : MonoBehaviour
     {
         Destroy(player.gameObject);
         
-    }
-
-    public IEnumerator Revive()
-    {
-        reviveParticles.SetActive(true);
-        yield return new WaitForSeconds(reviveTime);
-        reviveParticles.SetActive(false);
-        
-    }
+    } 
     public void Init()
     {
         if(Instance != null && Instance != this)
