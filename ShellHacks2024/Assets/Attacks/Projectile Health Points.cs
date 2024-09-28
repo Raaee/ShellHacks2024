@@ -9,5 +9,6 @@ public class ProjectileHealthPoints : HealthPoints
     {
         OnHealthChange.Invoke();
         OnDead?.Invoke();
+        Destroy(this.gameObject);
     }
 }

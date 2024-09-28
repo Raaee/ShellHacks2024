@@ -11,7 +11,7 @@ using UnityEngine.InputSystem;
 public class NewProjectile : MonoBehaviour
 {
     [SerializeField] private float projectileSpeed = 10f; // The speed of the projectile.
-    private float lifeTime = 10f; // The maximum lifetime of the projectile.
+    [SerializeField]private float lifeTime = 10f; // The maximum lifetime of the projectile.
     public int CurrentDamage { get; set; } // current damage the projectile does
 
     private const string Kitsune_Proj_TAG = "Kitsune Projectile"; // Tag used to identify enemies.
@@ -75,8 +75,13 @@ public class NewProjectile : MonoBehaviour
             }
             projectileHealth.RemoveHealth(CurrentDamage);
 
+            if(projectileHealth.IsDead())
+            {
+                projectileHealth.Die();
+            }
+
             // Disable the projectile after it has hit an enemy
-            DisableProjectile();
+            //DisableProjectile();
             
         }
         // Check if the projectile has collided with the player
@@ -96,7 +101,11 @@ public class NewProjectile : MonoBehaviour
 
             potentialPlayerHealth.RemoveHealth(CurrentDamage);
 
-            DisableProjectile();
+            if (potentialPlayerHealth.IsDead())
+            {
+                potentialPlayerHealth.Die();
+            }
+
         }
         // Check if the projectile has collided with the crystal
         else if (collider.gameObject.CompareTag(Player_Proj_TAG))
@@ -109,8 +118,10 @@ public class NewProjectile : MonoBehaviour
                 return;
             }
             playerProjectileHealth.RemoveHealth(CurrentDamage);
+            playerProjectileHealth.Die();
 
-            DisableProjectile(); // Uncomment this to not have piercing on crystal.
+
+                 
         }
     }
 

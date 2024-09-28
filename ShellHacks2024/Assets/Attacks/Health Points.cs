@@ -11,9 +11,9 @@ public class HealthPoints : MonoBehaviour
     private bool isDead = false;
     private int previousDamage;
 
-    public UnityEvent OnDead;
-    public UnityEvent OnHurt;
-    public UnityEvent OnHealthChange;
+    [HideInInspector] public UnityEvent OnDead;
+    [HideInInspector] public UnityEvent OnHurt;
+    [HideInInspector] public UnityEvent OnHealthChange;
 
     public virtual void Start()
     {

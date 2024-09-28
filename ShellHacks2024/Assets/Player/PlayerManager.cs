@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float reviveTime = 1f;
     private GameObject deathPanelClone;
 
-    public UnityEvent OnRevive;
+    [HideInInspector] public UnityEvent OnRevive;
 
     private Animator animator;
     private const string DEATH = "Death";
