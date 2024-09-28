@@ -9,6 +9,7 @@ public class PlayerAttack : Ability
     [SerializeField] private int maxPiercingAmount = 1;
     private InputManager inputManager;
     [SerializeField] private bool isPlayerShooting;
+    [SerializeField] private Transform firePoint;
 
     private void Awake()
     {
@@ -19,9 +20,8 @@ public class PlayerAttack : Ability
     private void SpawnProjectile(Vector2 moveDirection)
     {
         GameObject go = Instantiate(projectilePrefab, transform);
-        go.transform.position = this.transform.position;
+        go.transform.position = firePoint.position;
         NewProjectile projectile = go.GetComponent<NewProjectile>();
-       
         projectile.SetMoveDirection(moveDirection,isPlayerShooting);
         projectile.CurrentDamage = currentDamage;
         projectile.SetLifeTime(maxLifeTime);
