@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class PlayerAnimations : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Animator animator;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Start() {
+        animator = GetComponent<Animator>();
     }
 }
