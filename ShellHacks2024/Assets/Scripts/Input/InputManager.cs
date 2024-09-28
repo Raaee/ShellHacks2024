@@ -10,8 +10,8 @@ public class InputManager : MonoBehaviour
     public InputAction attack;
     public InputAction pause;
     private PlayerControls playerControls;
-    public UnityEvent OnAttackInput;
-    public UnityEvent OnPause;
+    [HideInInspector] public UnityEvent OnAttackInput;
+    [HideInInspector] public UnityEvent OnPause;
 
 
     void Awake()

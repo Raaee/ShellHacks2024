@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3875300029158892123}
   - component: {fileID: 7581151778569690971}
   - component: {fileID: 3935562412142727387}
-  - component: {fileID: 5413140892935718281}
   - component: {fileID: 1422677161356993715}
+  - component: {fileID: -8373979442738316552}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -150,7 +150,19 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  pause:
+    m_Name: Pause
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 782edb97-f814-4147-acf8-8e8bff71bb86
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   OnAttackInput:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPause:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7581151778569690971
@@ -194,8 +206,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &5413140892935718281
-CapsuleCollider2D:
+--- !u!114 &1422677161356993715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811001761666707661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b88c404da033f469b21feab70f9d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDamage: 100
+  currentDamage: 100
+  maxLifeTime: 10
+  cooldown: 0
+  IsActive: 0
+  OnAbilityUsage:
+    m_PersistentCalls:
+      m_Calls: []
+  projectilePrefab: {fileID: 4655874203817989530, guid: dd869df018783054d97473d872faea66, type: 3}
+  maxPiercingAmount: 100
+  isPlayerShooting: 0
+  firePoint: {fileID: 0}
+--- !u!61 &-8373979442738316552
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -226,28 +262,16 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.54315734, y: 0.2715795}
-  m_Size: {x: 3.193869, y: 3.19387}
-  m_Direction: 0
---- !u!114 &1422677161356993715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3811001761666707661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6b88c404da033f469b21feab70f9d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxDamage: 100
-  currentDamage: 100
-  maxLifeTime: 10
-  cooldown: 0
-  IsActive: 0
-  OnAbilityUsage:
-    m_PersistentCalls:
-      m_Calls: []
-  projectilePrefab: {fileID: 4655874203817989530, guid: dd869df018783054d97473d872faea66, type: 3}
-  maxPiercingAmount: 100
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.125, y: 3.125}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.125, y: 3.125}
+  m_EdgeRadius: 0
