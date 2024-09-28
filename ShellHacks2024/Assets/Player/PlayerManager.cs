@@ -68,7 +68,7 @@ public class PlayerManager : MonoBehaviour
 
     private void DisablePlayer()
     {
-        player.gameObject.SetActive(false);
+        Destroy(player.gameObject);
         
     }
 

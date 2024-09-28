@@ -17,6 +17,7 @@ public class NewProjectile : MonoBehaviour
     private const string Kitsune_Proj_TAG = "Kitsune Projectile"; // Tag used to identify enemies.
     private const string PLAYER_TAG = "Player"; // Tag used to identify the player.
     private const string Player_Proj_TAG = "Player Projectile"; // Tag used to identify the crystal.
+    private Vector2 moveDirection;
 
     private float timer = 0f; // Timer used to track the lifetime of the projectile.
     private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
@@ -44,16 +45,16 @@ public class NewProjectile : MonoBehaviour
             timer = 0;
         }
     }
-
-    public void isPlayerShoot(bool isPlayerShooting)
+    public void SetMoveDirection(Vector2 movDir, bool isPlayerShooting)
     {
         this.isPlayerShooting = isPlayerShooting;
-        
-        
+        moveDirection = movDir;
     }
+
+    
     public void MoveProjectile()
     {
-        rb2D.velocity = transform.right * projectileSpeed;
+        rb2D.velocity = moveDirection * projectileSpeed;
 
     }
 
@@ -81,7 +82,7 @@ public class NewProjectile : MonoBehaviour
         // Check if the projectile has collided with the player
         else if (collider.gameObject.CompareTag(PLAYER_TAG))
         {
-            if (isPlayerShooting)
+            if (gameObject.CompareTag(Player_Proj_TAG))
             {
                 return;
             }

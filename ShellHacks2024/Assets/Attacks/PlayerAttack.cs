@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Attack : Ability
+public class PlayerAttack : Ability
 {
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private int maxPiercingAmount = 1;
     private InputManager inputManager;
+    [SerializeField] private bool isPlayerShooting;
 
     private void Awake()
     {
@@ -20,8 +21,8 @@ public class Attack : Ability
         GameObject go = Instantiate(projectilePrefab, transform);
         go.transform.position = this.transform.position;
         NewProjectile projectile = go.GetComponent<NewProjectile>();
-        projectile.MoveProjectile();
-        projectile.isPlayerShoot(true);
+       
+        projectile.SetMoveDirection(moveDirection,isPlayerShooting);
         projectile.CurrentDamage = currentDamage;
         projectile.SetLifeTime(maxLifeTime);
         
