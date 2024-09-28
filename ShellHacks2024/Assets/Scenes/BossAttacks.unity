@@ -389,6 +389,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1166021750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1166021751}
+  m_Layer: 0
+  m_Name: SpawnTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1166021751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166021750}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1965367931}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340806067
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,6 +834,7 @@ MonoBehaviour:
   OnSpawnProjectile2:
     m_PersistentCalls:
       m_Calls: []
+  UIScoreMultilplier: 1
 --- !u!114 &1683674460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,6 +1098,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 1166021751}
   - {fileID: 47103856}
   - {fileID: 1393353616}
   m_Father: {fileID: 0}
@@ -1085,16 +1118,18 @@ MonoBehaviour:
   score: {fileID: 1683674459}
   maxLimitSpawn: {fileID: 1426974373}
   minLimitSpawn: {fileID: 1340806068}
+  startingXPos: {fileID: 1166021751}
   projectile: {fileID: 4655874203817989530, guid: 5402566e4b5974ec0bc7f2f2429be8de, type: 3}
   projectile2: {fileID: 7825421608480307029, guid: e6f1f7e9706444f02a1c17840ef42d30, type: 3}
   projectilesParentObject: {fileID: 819307661}
-  speedIncreaseAmount: 2
+  speedIncreaseAmount: 5
   currentProjSpeed: 0
   isPlayerDead: 0
   is25Seconds: 0
   OnIncreaseSpped:
     m_PersistentCalls:
       m_Calls: []
+  waitTime: 0.5
 --- !u!1 &2022632087
 GameObject:
   m_ObjectHideFlags: 0

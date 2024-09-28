@@ -16,12 +16,23 @@ public class Score_Points : MonoBehaviour
     public UnityEvent OnSpeedUpInterval;
     public UnityEvent OnSpawnProjectile2;
     private bool alreadySpedUp = false;
+    private bool alreadySpawn = false;
+
+    private int UIScore;
+
+   [SerializeField] private float UIScoreMultilplier = 1;
+
 
     private void Update()
     {
         AddPointsToScore();
-        //if (points % 25 == 0)
-        //    OnSpawnProjectile2.Invoke();
+        if (points % 150 == 0 && !alreadySpawn)
+        {
+            OnSpawnProjectile2.Invoke();
+            alreadySpawn = true;
+        }
+        if (points % 150 != 0)
+            alreadySpawn = false;
 
     }
 
@@ -34,15 +45,23 @@ public class Score_Points : MonoBehaviour
             Debug.Log("invoke");
             OnSpeedUpInterval.Invoke();
             alreadySpedUp = true;
+            ScoreMultiplier();
         }
         if (points % speedUpInterval != 0)
         {
             alreadySpedUp = false;
         }
+
     }
     private void UpdateScoreText()
     {
+        //UIScore = points * UIScoreMultilplier;
         score.text = "Score: " + points;
+    }
+
+
+    public void ScoreMultiplier() {
+        UIScoreMultilplier *= 1.5f;
     }
 
 }
