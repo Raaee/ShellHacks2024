@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4405040711573587464}
-  - component: {fileID: 1524080382743956787}
   - component: {fileID: 5567561337013909039}
   - component: {fileID: 871061995990521633}
+  - component: {fileID: 5425953484794786221}
+  - component: {fileID: 4817398690801743148}
   m_Layer: 0
-  m_Name: Projectile
-  m_TagString: Untagged
+  m_Name: Kitsune Projectile
+  m_TagString: Kitsune Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,22 +36,6 @@ Transform:
   - {fileID: 4275025596806700021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1524080382743956787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4655874203817989530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02cd87f823fc543dc900e8823469a060, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 35
-  OnProjectileDisabled:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!50 &5567561337013909039
 Rigidbody2D:
   serializedVersion: 4
@@ -76,8 +61,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!70 &871061995990521633
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -107,12 +92,51 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.51790816, y: -0.018833071}
-  m_Size: {x: 0.86816895, y: 0.98301667}
+  m_Offset: {x: -0.006238699, y: -0.01883316}
+  m_Size: {x: 2.0257154, y: 2.0257154}
   m_Direction: 0
+--- !u!114 &5425953484794786221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655874203817989530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19e95344721fc94ebc93887d6a3cb85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 150
+  <currentHp>k__BackingField: 150
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4817398690801743148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655874203817989530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01537e532af2edd41a920fab17dd5319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 0
+  OnProjectileDisabled:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7122149346349313955
 GameObject:
   m_ObjectHideFlags: 0

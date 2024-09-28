@@ -12,14 +12,14 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] public float cooldown;
     [SerializeField] protected bool IsActive;
     protected bool isOnCoolDown = false;
-    [HideInInspector] public UnityEvent OnAbilityUsage;
+    [HideInInspector] public UnityEvent OnAbilityUsage; // Used for sound effects
 
 
     public IEnumerator UseAbility()
     {
         isOnCoolDown = true;
         AbilityUsage();
-        OnAbilityUsage.Invoke();
+        OnAbilityUsage.Invoke(); 
         yield return new WaitForSeconds(cooldown);
         isOnCoolDown = false;
 

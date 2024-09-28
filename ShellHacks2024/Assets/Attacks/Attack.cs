@@ -19,8 +19,9 @@ public class Attack : Ability
     {
         GameObject go = Instantiate(projectilePrefab, transform);
         go.transform.position = this.transform.position;
-        Projectile projectile = go.GetComponent<Projectile>();
+        NewProjectile projectile = go.GetComponent<NewProjectile>();
         projectile.MoveProjectile();
+        projectile.isPlayerShoot(true);
         projectile.CurrentDamage = currentDamage;
         projectile.SetLifeTime(maxLifeTime);
         
@@ -31,10 +32,10 @@ public class Attack : Ability
         if (isOnCoolDown)
         {
             return;
-        }else
-        {
-            StartCoroutine(UseAbility());
         }
+        
+        StartCoroutine(UseAbility());
+        
 
     }
 

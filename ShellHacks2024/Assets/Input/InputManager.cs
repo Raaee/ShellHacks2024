@@ -37,6 +37,7 @@ public class InputManager : MonoBehaviour
     private void Attack(InputAction.CallbackContext context)
     {
         OnAttackInput.Invoke();
+
     }
 
      
