@@ -212,8 +212,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2098332767}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &357395273
@@ -385,6 +384,8 @@ MonoBehaviour:
   player: {fileID: 1795100578}
   deathPanel: {fileID: 0}
   spawnPoint: {fileID: 357395274}
+  reviveParticles: {fileID: 0}
+  reviveParticleGOName: 
   reviveTime: 1
   OnRevive:
     m_PersistentCalls:
@@ -586,76 +587,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 0
   lifeTime: 100
-  fireDirection: 0
   OnProjectileDisabled:
     m_PersistentCalls:
       m_Calls: []
---- !u!1001 &2098332766
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 126782352}
-    m_Modifications:
-    - target: {fileID: 1576698447692013903, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_Name
-      value: Music
-      objectReference: {fileID: 0}
-    - target: {fileID: 2226689777646909917, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: audioStems.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: aa47208f053f8fa4f9f1e099c9c5bab1, type: 3}
-    - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.35242
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.362607
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.07460594
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.98771954
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.05568451
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.14597715
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.00019242232
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -6.319
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -16.865
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0.915
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
---- !u!4 &2098332767 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
-  m_PrefabInstance: {fileID: 2098332766}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

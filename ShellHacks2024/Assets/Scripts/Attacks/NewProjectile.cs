@@ -114,10 +114,7 @@ public class NewProjectile : MonoBehaviour
        
         else if (collider.gameObject.CompareTag(Player_Proj_TAG))
         {
-            if (gameObject.CompareTag(Player_Proj_TAG))
-            {
-                return;
-            }
+
             ProjectileHealthPoints playerProjectileHealth = collider.gameObject.GetComponent<ProjectileHealthPoints>();
 
             if (!playerProjectileHealth)
