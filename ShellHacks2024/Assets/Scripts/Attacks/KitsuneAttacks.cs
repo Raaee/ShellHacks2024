@@ -18,7 +18,7 @@ public class KitsuneAttacks : MonoBehaviour
 
     [SerializeField] private bool isPlayerDead;
 
-    [SerializeField] public bool spawningWall = false;
+    [SerializeField] public bool is25Seconds = false;
 
     [HideInInspector] public UnityEvent OnIncreaseSpped;
 
@@ -41,14 +41,17 @@ public class KitsuneAttacks : MonoBehaviour
             GameObject projectile1GO = Instantiate(projectile, projectilesParentObject);
 
             float randomYpos = Random.Range(minLimitSpawn.localPosition.y, maxLimitSpawn.localPosition.y);
-            projectile1GO.transform.position = new Vector3(startingXPos.transform.position.x, randomYpos, 0f);
+            projectile1GO.transform.position = new Vector3(startingXPos.transform.localPosition.x, randomYpos, 0f);
             NewProjectile proj1 = projectile1GO.GetComponent<NewProjectile>();
+            //proj1.Stop();
+            
             proj1.IncreaseSpeed(currentProjSpeed);
-            if (spawningWall)
+            if (is25Seconds)
             {
                 GameObject projectile2GO = Instantiate(projectile2, projectilesParentObject);
                 projectile2GO.transform.position = startingXPos.transform.position;
-                spawningWall = false;
+                NewProjectile proj2 = projectile2GO.GetComponent<NewProjectile>();
+                is25Seconds = false;
             }
             
 
@@ -62,7 +65,7 @@ public class KitsuneAttacks : MonoBehaviour
         currentProjSpeed += speedIncreaseAmount;
     }
     private void Spawn2Projectile() {
-        spawningWall = true;
+        is25Seconds = true;
     }
 
     public IEnumerator waitToStartgame()

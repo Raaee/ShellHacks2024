@@ -25,7 +25,7 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         Components();
-        //hp.OnDead.AddListener(Death);
+        hp.OnDead.AddListener(Death);
         Respawn();
     }
 

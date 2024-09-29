@@ -118,8 +118,7 @@ MonoBehaviour:
   score: {fileID: 8360577746474523133}
   points: 0
   timerSpeedMultiplier: 3
-  speedUpInterval: 50
-  wallInterval: 75
+  speedUpInterval: 150
   OnSpeedUpInterval:
     m_PersistentCalls:
       m_Calls: []
@@ -161,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -993, y: 390}
+  m_AnchoredPosition: {x: -1131, y: 431}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2733073615897302539
