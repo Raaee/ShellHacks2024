@@ -7,8 +7,8 @@ public class PlayerAttack : Ability
 {
     [SerializeField] private GameObject projectilePrefab;
     private InputManager inputManager;
-    [SerializeField] private bool isPlayerShooting;
     [SerializeField] private Transform firePoint;
+    [SerializeField] private Transform parent;
 
     private void Awake()
     {
@@ -16,15 +16,12 @@ public class PlayerAttack : Ability
         inputManager.OnAttackInput.AddListener(ShootIfActive);
     
     }
-    private void SpawnProjectile(Vector2 moveDirection)
+    private void SpawnProjectile()
     {
-        GameObject go = Instantiate(projectilePrefab, transform);
+        GameObject go = Instantiate(projectilePrefab, parent);
         go.transform.position = firePoint.position;
         NewProjectile projectile = go.GetComponent<NewProjectile>();
-        projectile.SetMoveDirection(moveDirection,isPlayerShooting);
         projectile.CurrentDamage = currentDamage;
-        projectile.SetLifeTime(maxLifeTime);
-        
     }
 
     private void ShootIfActive()
@@ -41,7 +38,7 @@ public class PlayerAttack : Ability
 
     public override void AbilityUsage()
     {
-        SpawnProjectile(Vector2.right);
+        SpawnProjectile();
     }
 
     public int GetMaxDanmage()

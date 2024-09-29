@@ -243,8 +243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b88c404da033f469b21feab70f9d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDamage: 100
-  currentDamage: 100
+  maxDamage: 1
+  currentDamage: 0
   maxLifeTime: 10
   cooldown: 0
   IsActive: 0
@@ -252,8 +252,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   projectilePrefab: {fileID: 4655874203817989530, guid: dd869df018783054d97473d872faea66, type: 3}
-  isPlayerShooting: 0
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 1922357733602957838}
+  parent: {fileID: 0}
 --- !u!1 &4611009268709216117
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,8 +283,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2087638701460383539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
