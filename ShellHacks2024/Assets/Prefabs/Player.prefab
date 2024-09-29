@@ -40,12 +40,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2087638701460383539}
-  - component: {fileID: -8373979442738316552}
+  - component: {fileID: 4127571135540364993}
   - component: {fileID: 3935562412142727387}
   - component: {fileID: 398863636342193440}
   - component: {fileID: 3875300029158892123}
   - component: {fileID: 7581151778569690971}
   - component: {fileID: 1422677161356993715}
+  - component: {fileID: 7472806016322384179}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -70,8 +71,8 @@ Transform:
   - {fileID: 1922357733602957838}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &-8373979442738316552
-BoxCollider2D:
+--- !u!70 &4127571135540364993
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,19 +103,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.125, y: 3.125}
-    newSize: {x: 1, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.125, y: 3.125}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.48329973, y: 0.053179502}
+  m_Size: {x: 2.1273012, y: 2.522613}
+  m_Direction: 0
 --- !u!50 &3935562412142727387
 Rigidbody2D:
   serializedVersion: 4
@@ -243,8 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6b88c404da033f469b21feab70f9d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDamage: 100
-  currentDamage: 100
+  maxDamage: 1
+  currentDamage: 0
   maxLifeTime: 10
   cooldown: 0
   IsActive: 0
@@ -252,8 +243,31 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   projectilePrefab: {fileID: 4655874203817989530, guid: dd869df018783054d97473d872faea66, type: 3}
-  isPlayerShooting: 0
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 1922357733602957838}
+  parent: {fileID: 0}
+--- !u!114 &7472806016322384179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3811001761666707661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdb4129641420145b07c85e0b507a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 10
+  <currentHp>k__BackingField: 0
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4611009268709216117
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,8 +297,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2087638701460383539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
