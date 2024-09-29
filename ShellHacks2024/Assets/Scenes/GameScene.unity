@@ -284,6 +284,10 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 272330904}
+    - target: {fileID: 1422677161356993715, guid: b41d0c0ccfa34e04885cf76086aff561, type: 3}
+      propertyPath: cooldown
+      value: 0.08
+      objectReference: {fileID: 0}
     - target: {fileID: 2087638701460383539, guid: b41d0c0ccfa34e04885cf76086aff561, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.5
@@ -327,6 +331,10 @@ PrefabInstance:
     - target: {fileID: 3811001761666707661, guid: b41d0c0ccfa34e04885cf76086aff561, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127571135540364993, guid: b41d0c0ccfa34e04885cf76086aff561, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
