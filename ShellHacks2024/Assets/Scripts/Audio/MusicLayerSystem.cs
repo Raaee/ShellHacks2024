@@ -8,15 +8,15 @@ using static System.TimeZoneInfo;
 public class MusicLayerSystem : MonoBehaviour
 {
     [SerializeField] private AudioClip[] audioStems;
-    [SerializeField][Range(0.01f, 12f)] private float fadeInTime = 1.5f;
-    [SerializeField][Range(0.01f, 12f)] private float fadeOutTime = 1.5f;
+    [SerializeField][Range(0.01f, 30f)] private float fadeInTime = 1.5f;
+    [SerializeField][Range(0.01f, 30f)] private float fadeOutTime = 1.5f;
     [SerializeField] private AudioMixerGroup mixerGroup;
 
     private AudioSource[] audioSources;
     private int currentAudioSourceIntensity;
     private int amountOfStems;
 
-    private const float MusicVolumeMax = 1f;
+    private const float MusicVolumeMax = .4f;
     private bool musicIsPlaying;
 
     private void Awake()

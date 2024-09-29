@@ -117,12 +117,21 @@ public class NewProjectile : MonoBehaviour
 
             ProjectileHealthPoints playerProjectileHealth = collider.gameObject.GetComponent<ProjectileHealthPoints>();
 
+            
+
             if (!playerProjectileHealth)
             {
                 return;
             }
-            playerProjectileHealth.RemoveHealth(CurrentDamage);
-            playerProjectileHealth.Die();
+            if (gameObject.CompareTag(Player_Proj_TAG))
+            {
+                return;
+            }
+            else
+            {
+                playerProjectileHealth.RemoveHealth(CurrentDamage);
+                playerProjectileHealth.Die();
+            }
         }
     }
 

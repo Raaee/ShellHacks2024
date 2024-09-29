@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8774516446740512944}
   - component: {fileID: 1316609879830024043}
-  - component: {fileID: 1215492144283682305}
+  - component: {fileID: 3856135728906661059}
   - component: {fileID: 8176468179234016687}
   - component: {fileID: 2226689777646909917}
   m_Layer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576698447692013903}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.05568451, y: -0.14597715, z: -0.00019242232, w: 0.98771954}
+  m_LocalRotation: {x: -0.05568735, y: -0.14598124, z: -0.0001956951, w: 0.98771876}
   m_LocalPosition: {x: -8.35242, y: 2.362607, z: -9.925394}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 0}
---- !u!82 &1215492144283682305
+--- !u!82 &3856135728906661059
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,7 +66,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -174,6 +174,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioStems:
   - {fileID: 8300000, guid: 500e4713bab3b414ab0993780015a1ad, type: 3}
-  fadeInTime: 1.5
+  fadeInTime: 12
   fadeOutTime: 1.5
   mixerGroup: {fileID: 5828657955953452026, guid: 733a35ade605eb144bfab7f486d9f41c, type: 2}
