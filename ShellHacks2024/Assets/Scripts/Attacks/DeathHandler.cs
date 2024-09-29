@@ -5,22 +5,22 @@ using UnityEngine;
 public class DeathHandler : MonoBehaviour
 {
     private PlayerHealthPoints playerHealthPoints;
-    [SerializeField] private Canvas deathPanel;
+    [SerializeField] public GameObject deathPanel;
     
   
 
     private void Awake()
     {
         playerHealthPoints = GetComponent<PlayerHealthPoints>();
-        deathPanel.enabled = false;
-        playerHealthPoints.OnDead.AddListener(OnHandleDead);
+        deathPanel.SetActive(false);
+        //playerHealthPoints.OnDead.AddListener(OnHandleDead);
         
     }
     
-    private void OnHandleDead()
+    public void OnHandleDead()
     {
         
-        deathPanel.enabled = true;
+        deathPanel.SetActive(true);
         Time.timeScale = 0f;
 
         

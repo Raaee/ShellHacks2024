@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class PlayerHealthPoints : HealthPoints
 {
     [SerializeField] private DamageFlash damageFlash;
-    
+    [SerializeField] private DeathHandler deathHandler;
     public override void Start()
     {
         base.Start();  
@@ -17,6 +17,7 @@ public class PlayerHealthPoints : HealthPoints
     [ProButton]
     public override void Die()
     {
+        deathHandler.OnHandleDead();
         OnHealthChange?.Invoke();
         OnDead?.Invoke();
         Destroy(this.gameObject);
