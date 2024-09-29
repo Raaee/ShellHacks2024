@@ -1535,7 +1535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2226689777646909917, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
       propertyPath: fadeInTime
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8774516446740512944, guid: aff08362b43fc9b40a0d53838b3b8d5c, type: 3}
       propertyPath: m_LocalPosition.x
