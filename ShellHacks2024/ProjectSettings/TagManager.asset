@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Kitsune Projectile
   - Player Projectile
+  - Kitsune Wall
   layers:
   - Default
   - TransparentFX
