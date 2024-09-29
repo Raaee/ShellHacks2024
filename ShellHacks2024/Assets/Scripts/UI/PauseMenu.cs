@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] public GameObject pauseMenu;
+    [SerializeField] private Score_Points score;
     private InputManager inputManager;
+    [SerializeField] private TextMeshProUGUI TextMesh;
 
     void Awake()
     {
+
         inputManager = FindObjectOfType<InputManager>();
         inputManager.OnPause.AddListener(ShowPauseMenu);
     }
@@ -24,6 +28,8 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0f; // Pauses the game
             pauseMenu.SetActive(true); // Displays the pause menu
             // Shows the cursor
+            setScoreInMenu();
+
         }
         // Otherwise, resume the game and hide the menu
         else
@@ -54,6 +60,11 @@ public class PauseMenu : MonoBehaviour
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void setScoreInMenu()
+    {
+        TextMesh.text = "Score: " + score.points;
     }
 
 }
