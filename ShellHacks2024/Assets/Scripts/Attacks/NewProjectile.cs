@@ -13,7 +13,8 @@ public class NewProjectile : MonoBehaviour
     [SerializeField] private float projectileSpeed = 10f; // The speed of the projectile.
     public int CurrentDamage { get; set; } // current damage the projectile does
 
-    private const string Kitsune_Proj_TAG = "Kitsune Projectile";
+    private const string Kitsune_Proj1_TAG = "Kitsune Projectile";
+    private const string Kitsune_Proj2_TAG = "Kitsune Wall";
     private const string PLAYER_TAG = "Player"; // Tag used to identify the player.
     private const string Player_Proj_TAG = "Player Projectile"; 
     private bool canMove = true;
@@ -22,6 +23,7 @@ public class NewProjectile : MonoBehaviour
     [SerializeField] private bool isPlayerShooting;
 
     [HideInInspector] public UnityEvent OnProjectileDisabled;
+    [HideInInspector] public UnityEvent<float> OnRemoveHeath;
 
     private void Awake()
     {
@@ -43,9 +45,9 @@ public class NewProjectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.CompareTag(Kitsune_Proj_TAG))
+        if (collider.gameObject.CompareTag(Kitsune_Proj1_TAG))
         {
-            
+
             ProjectileHealthPoints projectileHealth = collider.gameObject.GetComponent<ProjectileHealthPoints>();
             if (!projectileHealth)
             {
@@ -53,28 +55,54 @@ public class NewProjectile : MonoBehaviour
             }
             projectileHealth.RemoveHealth(CurrentDamage);
 
-            if(projectileHealth.IsDead())
+            if (projectileHealth.IsDead())
             {
                 projectileHealth.Die();
             }
-            
-                      
+
+
+        }
+        else if (collider.gameObject.CompareTag(Kitsune_Proj2_TAG))
+        {
+            Debug.Log("WallHit");
+            ProjectileHealthPoints projectileHealth = collider.gameObject.GetComponent<ProjectileHealthPoints>();
+            if (!projectileHealth)
+            {
+                return;
+            }
+            projectileHealth.RemoveHealth(CurrentDamage);
+
+            if (projectileHealth.IsDead())
+            {
+                projectileHealth.Die();
+            }
         }
         else if (collider.gameObject.CompareTag(PLAYER_TAG)) // ignore player proj when hitting player
         {
+            
             if (gameObject.CompareTag(Player_Proj_TAG))
             {
                 return;
             }
 
-            PlayerHealthPoints potentialPlayerHealth  = collider.gameObject.GetComponent<PlayerHealthPoints>();
+            PlayerHealthPoints potentialPlayerHealth = collider.gameObject.GetComponent<PlayerHealthPoints>();
 
             if (!potentialPlayerHealth)
             {
                 return;
             }
             Debug.Log(CurrentDamage);
-            potentialPlayerHealth.RemoveHealth(1);
+            if (gameObject.CompareTag(Kitsune_Proj2_TAG))
+            {
+                potentialPlayerHealth.RemoveHealth(5);
+
+                OnRemoveHeath.Invoke(5);
+            }
+            else
+            {
+                potentialPlayerHealth.RemoveHealth(1);
+                OnRemoveHeath.Invoke(1);
+            }
 
 
             if (potentialPlayerHealth.IsDead())
@@ -83,6 +111,7 @@ public class NewProjectile : MonoBehaviour
             }
             DisableProjectile();
         }
+       
         else if (collider.gameObject.CompareTag(Player_Proj_TAG))
         {
             if (gameObject.CompareTag(Player_Proj_TAG))
