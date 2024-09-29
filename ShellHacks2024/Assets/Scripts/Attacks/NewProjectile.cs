@@ -67,14 +67,15 @@ public class NewProjectile : MonoBehaviour
                 return;
             }
 
-            PlayerHealthPoints potentialPlayerHealth = collider.gameObject.GetComponent<PlayerHealthPoints>();
+            PlayerHealthPoints potentialPlayerHealth  = collider.gameObject.GetComponent<PlayerHealthPoints>();
 
             if (!potentialPlayerHealth)
             {
                 return;
             }
+            Debug.Log(CurrentDamage);
+            potentialPlayerHealth.RemoveHealth(1);
 
-            potentialPlayerHealth.RemoveHealth(CurrentDamage);
 
             if (potentialPlayerHealth.IsDead())
             {

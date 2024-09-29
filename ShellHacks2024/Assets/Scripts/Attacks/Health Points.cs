@@ -28,15 +28,15 @@ public class HealthPoints : MonoBehaviour
         if (currentHp <= 0)
         {
             currentHp = 0;
-            if (IsDead() == false)
+            if (!IsDead())
             {
                 isDead = true;
                 Die();
             }
             return;
         }
-        OnHurt.Invoke();
-        OnHealthChange.Invoke();
+        OnHurt?.Invoke();
+        OnHealthChange?.Invoke();
     }
     public bool IsDead()
     {

@@ -12,6 +12,7 @@ public class KitsuneAttacks : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject projectile2;
     [SerializeField] private Transform projectilesParentObject;
+    private Ability ability;
 
     [SerializeField] private int speedIncreaseAmount = 2;
     public int currentProjSpeed;
@@ -43,6 +44,7 @@ public class KitsuneAttacks : MonoBehaviour
             float randomYpos = Random.Range(minLimitSpawn.localPosition.y, maxLimitSpawn.localPosition.y);
             projectile1GO.transform.position = new Vector3(startingXPos.transform.position.x, randomYpos, 0f);
             NewProjectile proj1 = projectile1GO.GetComponent<NewProjectile>();
+            
             proj1.IncreaseSpeed(currentProjSpeed);
             if (spawningWall)
             {
@@ -65,5 +67,7 @@ public class KitsuneAttacks : MonoBehaviour
         spawningWall = true;
     }
 
-    
+   
+
+
 }
