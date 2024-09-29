@@ -24,13 +24,13 @@ public class KitsuneAttacks : MonoBehaviour
 
     [SerializeField] private float waitTime = 1;
 
+    public bool isWaitingToStartGame = false;
+
     void Start()
     {
+        StartCoroutine(waitToStartgame());
         score.OnSpeedUpInterval.AddListener(SpeedUpProjectiles);
         score.OnSpawnProjectile2.AddListener(Spawn2Projectile);
-        currentProjSpeed = (int)projectile.GetComponent<NewProjectile>().GetCurrentSpeed();
-        SpawnProjectile();
-
     }
     private void SpawnProjectile() {
         StartCoroutine(DelayProjectileSpawn());
@@ -68,5 +68,14 @@ public class KitsuneAttacks : MonoBehaviour
         is25Seconds = true;
     }
 
-    
+    public IEnumerator waitToStartgame()
+    {
+        yield return new WaitForSeconds(3);
+        currentProjSpeed = (int)projectile.GetComponent<NewProjectile>().GetCurrentSpeed();
+        SpawnProjectile();
+        isWaitingToStartGame = true;
+
+    }
+
+
 }

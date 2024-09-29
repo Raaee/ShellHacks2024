@@ -12,6 +12,7 @@ public class Score_Points : MonoBehaviour
     public int points = 0;
     [SerializeField] private float timerSpeedMultiplier = 3f;
     [SerializeField] private int speedUpInterval = 50;
+    [SerializeField] private KitsuneAttacks waitToStart;
 
     public UnityEvent OnSpeedUpInterval;
     public UnityEvent OnSpawnProjectile2;
@@ -25,14 +26,17 @@ public class Score_Points : MonoBehaviour
 
     private void Update()
     {
-        AddPointsToScore();
-        if (points % 150 == 0 && !alreadySpawn)
-        {
-            OnSpawnProjectile2.Invoke();
-            alreadySpawn = true;
+
+        if (waitToStart.isWaitingToStartGame) {
+            AddPointsToScore();
+            if (points % 150 == 0 && !alreadySpawn)
+            {
+                OnSpawnProjectile2.Invoke();
+                alreadySpawn = true;
+            }
+            if (points % 150 != 0)
+                alreadySpawn = false;
         }
-        if (points % 150 != 0)
-            alreadySpawn = false;
 
     }
 
