@@ -11,77 +11,42 @@ using UnityEngine.InputSystem;
 public class NewProjectile : MonoBehaviour
 {
     [SerializeField] private float projectileSpeed = 10f; // The speed of the projectile.
-    [SerializeField] private float lifeTime = 10f; // The maximum lifetime of the projectile.
     public int CurrentDamage { get; set; } // current damage the projectile does
 
-    private const string Kitsune_Proj_TAG = "Kitsune Projectile"; // Tag used to identify enemies.
+    private const string Kitsune_Proj_TAG = "Kitsune Projectile";
     private const string PLAYER_TAG = "Player"; // Tag used to identify the player.
-    private const string Player_Proj_TAG = "Player Projectile"; // Tag used to identify the crystal.
-    private Vector2 moveDirection;
-    [SerializeField] private FireDirection fireDirection;
+    private const string Player_Proj_TAG = "Player Projectile"; 
+    private bool canMove = true;
 
-    private float timer = 0f; // Timer used to track the lifetime of the projectile.
-    private Rigidbody2D rb2D; // The Rigidbody2D component of the projectile.
-
-    private bool isPlayerShooting = true;
+    private Rigidbody2D rb2D;
+    [SerializeField] private bool isPlayerShooting;
 
     [HideInInspector] public UnityEvent OnProjectileDisabled;
 
     private void Awake()
     {
         rb2D = GetComponent<Rigidbody2D>();
-    }
-    void Start() {
-        DetermineMovDirection();
-    }
-   
-
+    }   
     private void FixedUpdate()
     {
+        if (!canMove) return;
         MoveProjectile();
+    }
 
-        timer += Time.deltaTime;
-
-        // If the projectile has existed for longer than its maximum lifetime, disable it
-        if (timer >= lifeTime)
-        {
-            DisableProjectile();
-            timer = 0;
+    public void MoveProjectile() {
+        if (isPlayerShooting) {
+            this.transform.position += Vector3.right * projectileSpeed * Time.fixedDeltaTime;
+        }
+        else {
+            this.transform.position += Vector3.left * projectileSpeed * Time.fixedDeltaTime;
         }
     }
-    public void SetMoveDirection(Vector2 movDir, bool isPlayerShooting)
-    {
-        this.isPlayerShooting = isPlayerShooting;
-        moveDirection = movDir;
-    }
-
-    
-    public void MoveProjectile()
-    {
-        rb2D.velocity = moveDirection * projectileSpeed;
-
-    }
-
-    // Sets the direction in which the projectile should move.
-   private void DetermineMovDirection() {
-        switch(fireDirection) {
-            case FireDirection.LEFT:
-                moveDirection = Vector2.left;
-                break;
-            case FireDirection.RIGHT:
-                moveDirection = Vector2.right;
-                break;
-        }
-    }
-
-    // OnTriggerEnter2D is called when the Collider2D other enters the trigger (2D physics only).
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag(Kitsune_Proj_TAG))
         {
             
             ProjectileHealthPoints projectileHealth = collider.gameObject.GetComponent<ProjectileHealthPoints>();
-
             if (!projectileHealth)
             {
                 return;
@@ -92,35 +57,32 @@ public class NewProjectile : MonoBehaviour
             {
                 projectileHealth.Die();
             }
-
-            // Disable the projectile after it has hit an enemy
-            //DisableProjectile();
             
+                      
         }
-        // Check if the projectile has collided with the player
-        else if (collider.gameObject.CompareTag(PLAYER_TAG))
+        else if (collider.gameObject.CompareTag(PLAYER_TAG)) // ignore player proj when hitting player
         {
             if (gameObject.CompareTag(Player_Proj_TAG))
             {
                 return;
             }
 
-            PlayerHealthPoints potentialPlayerHealth = collider.gameObject.GetComponent<PlayerHealthPoints>();
+            PlayerHealthPoints potentialPlayerHealth  = collider.gameObject.GetComponent<PlayerHealthPoints>();
 
             if (!potentialPlayerHealth)
             {
                 return;
             }
+            Debug.Log(CurrentDamage);
+            potentialPlayerHealth.RemoveHealth(1);
 
-            potentialPlayerHealth.RemoveHealth(CurrentDamage);
 
             if (potentialPlayerHealth.IsDead())
             {
                 potentialPlayerHealth.Die();
             }
-
+            DisableProjectile();
         }
-        // Check if the projectile has collided with the crystal
         else if (collider.gameObject.CompareTag(Player_Proj_TAG))
         {
 
@@ -132,9 +94,6 @@ public class NewProjectile : MonoBehaviour
             }
             playerProjectileHealth.RemoveHealth(CurrentDamage);
             playerProjectileHealth.Die();
-
-
-                 
         }
     }
 
@@ -144,19 +103,12 @@ public class NewProjectile : MonoBehaviour
         OnProjectileDisabled?.Invoke();
         Destroy(this.gameObject);
     }
-    public void SetLifeTime(float life)
-    {
-        lifeTime = life;
-    }
     public float GetCurrentSpeed() {
         return projectileSpeed;
     }
+
     public void IncreaseSpeed(int newSpeed) {
         projectileSpeed = newSpeed;
         Debug.Log("Speed" + projectileSpeed);
     }
-}
-public enum FireDirection {
-    LEFT,
-    RIGHT
 }

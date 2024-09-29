@@ -12,9 +12,10 @@ public class Score_Points : MonoBehaviour
     public int points = 0;
     [SerializeField] private float timerSpeedMultiplier = 3f;
     [SerializeField] private int speedUpInterval = 50;
+    [SerializeField] private int wallInterval = 100;
 
-    public UnityEvent OnSpeedUpInterval;
-    public UnityEvent OnSpawnProjectile2;
+    [HideInInspector] public UnityEvent OnSpeedUpInterval;
+    [HideInInspector] public UnityEvent OnSpawnProjectile2;
     private bool alreadySpedUp = false;
     private bool alreadySpawn = false;
 
@@ -26,12 +27,12 @@ public class Score_Points : MonoBehaviour
     private void Update()
     {
         AddPointsToScore();
-        if (points % 150 == 0 && !alreadySpawn)
+        if (points % wallInterval == 0 && !alreadySpawn && points != 0)
         {
             OnSpawnProjectile2.Invoke();
             alreadySpawn = true;
         }
-        if (points % 150 != 0)
+        if (points % wallInterval != 0)
             alreadySpawn = false;
 
     }
