@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class DeathPanel : MonoBehaviour
@@ -17,6 +18,9 @@ public class DeathPanel : MonoBehaviour
 
 
     }*/
+    [SerializeField] private Score_Points score;
+    [SerializeField] private TextMeshProUGUI TextMesh;
+
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
@@ -33,5 +37,9 @@ public class DeathPanel : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
+    public void setScoreInMenu() {
+        TextMesh.text = "Score: " + score.points;
+    }
+
 }
 

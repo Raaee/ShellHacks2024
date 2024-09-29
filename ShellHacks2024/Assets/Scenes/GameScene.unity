@@ -136,21 +136,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1386158091713970319, guid: f4da087da4e33cc47abfe9ef490876d5, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 1823067837}
     - target: {fileID: 4130902466038030767, guid: f4da087da4e33cc47abfe9ef490876d5, type: 3}
       propertyPath: m_Name
       value: DeathPanel
-      objectReference: {fileID: 0}
-    - target: {fileID: 4158833688532430751, guid: f4da087da4e33cc47abfe9ef490876d5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4158833688532430751, guid: f4da087da4e33cc47abfe9ef490876d5, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960986535084100144, guid: f4da087da4e33cc47abfe9ef490876d5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5779247017401725757, guid: f4da087da4e33cc47abfe9ef490876d5, type: 3}
       propertyPath: m_Pivot.x

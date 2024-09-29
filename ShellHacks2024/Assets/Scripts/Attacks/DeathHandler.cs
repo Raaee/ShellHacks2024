@@ -21,6 +21,7 @@ public class DeathHandler : MonoBehaviour
     {
         
         deathPanel.SetActive(true);
+        deathPanel.GetComponentInParent<DeathPanel>().setScoreInMenu();
         Time.timeScale = 0f;
 
         
