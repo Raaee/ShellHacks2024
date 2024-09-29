@@ -261,14 +261,14 @@ MonoBehaviour:
   maxLimitSpawn: {fileID: 1750470301169303497}
   minLimitSpawn: {fileID: 890014489420000835}
   startingXPos: {fileID: 8748391884756630374}
-  projectile: {fileID: 0}
-  projectile2: {fileID: 0}
-  projectilesParentObject: {fileID: 0}
+  projectile: {fileID: 4655874203817989530, guid: f45f3307c72c44880bd1b548e9909ef6, type: 3}
+  projectile2: {fileID: 3223162576712304446, guid: ea80cd3ec70f63f4db66a22eb744f21e, type: 3}
+  projectilesParentObject: {fileID: 8748391884756630374}
   speedIncreaseAmount: 5
   currentProjSpeed: 0
   isPlayerDead: 0
-  is25Seconds: 0
+  spawningWall: 0
   OnIncreaseSpped:
     m_PersistentCalls:
       m_Calls: []
-  waitTime: 0.5
+  waitTime: 0.8

@@ -12,13 +12,14 @@ public class KitsuneAttacks : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject projectile2;
     [SerializeField] private Transform projectilesParentObject;
+    private Ability ability;
 
     [SerializeField] private int speedIncreaseAmount = 2;
     public int currentProjSpeed;
 
     [SerializeField] private bool isPlayerDead;
 
-    [SerializeField] public bool is25Seconds = false;
+    [SerializeField] public bool spawningWall = false;
 
     [HideInInspector] public UnityEvent OnIncreaseSpped;
 
@@ -41,17 +42,15 @@ public class KitsuneAttacks : MonoBehaviour
             GameObject projectile1GO = Instantiate(projectile, projectilesParentObject);
 
             float randomYpos = Random.Range(minLimitSpawn.localPosition.y, maxLimitSpawn.localPosition.y);
-            projectile1GO.transform.position = new Vector3(startingXPos.transform.localPosition.x, randomYpos, 0f);
+            projectile1GO.transform.position = new Vector3(startingXPos.transform.position.x, randomYpos, 0f);
             NewProjectile proj1 = projectile1GO.GetComponent<NewProjectile>();
-            //proj1.Stop();
             
             proj1.IncreaseSpeed(currentProjSpeed);
-            if (is25Seconds)
+            if (spawningWall)
             {
                 GameObject projectile2GO = Instantiate(projectile2, projectilesParentObject);
                 projectile2GO.transform.position = startingXPos.transform.position;
-                NewProjectile proj2 = projectile2GO.GetComponent<NewProjectile>();
-                is25Seconds = false;
+                spawningWall = false;
             }
             
 
@@ -65,7 +64,7 @@ public class KitsuneAttacks : MonoBehaviour
         currentProjSpeed += speedIncreaseAmount;
     }
     private void Spawn2Projectile() {
-        is25Seconds = true;
+        spawningWall = true;
     }
 
     public IEnumerator waitToStartgame()
@@ -76,6 +75,7 @@ public class KitsuneAttacks : MonoBehaviour
         isWaitingToStartGame = true;
 
     }
+   
 
 
 }

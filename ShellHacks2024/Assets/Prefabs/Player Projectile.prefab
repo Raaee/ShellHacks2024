@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4405040711573587464}
+  - component: {fileID: 3529153353341446844}
   - component: {fileID: 5567561337013909039}
   - component: {fileID: -7587624693358187286}
   - component: {fileID: 7741517395341748623}
-  - component: {fileID: 3529153353341446844}
   m_Layer: 0
   m_Name: Player Projectile
   m_TagString: Player Projectile
@@ -36,74 +36,6 @@ Transform:
   - {fileID: 4275025596806700021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &5567561337013909039
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4655874203817989530}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &-7587624693358187286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4655874203817989530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c19e95344721fc94ebc93887d6a3cb85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 100
-  <currentHp>k__BackingField: 100
-  OnDead:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHurt:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHealthChange:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &7741517395341748623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4655874203817989530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01537e532af2edd41a920fab17dd5319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpeed: 35
-  lifeTime: 10
-  fireDirection: 1
-  OnProjectileDisabled:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &3529153353341446844
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,6 +81,73 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7442515, y: 0.80109406}
   m_EdgeRadius: 0
+--- !u!50 &5567561337013909039
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655874203817989530}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-7587624693358187286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655874203817989530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c19e95344721fc94ebc93887d6a3cb85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 2
+  <currentHp>k__BackingField: 0
+  OnDead:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHurt:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7741517395341748623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4655874203817989530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01537e532af2edd41a920fab17dd5319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 15
+  isPlayerShooting: 1
+  OnProjectileDisabled:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7122149346349313955
 GameObject:
   m_ObjectHideFlags: 0

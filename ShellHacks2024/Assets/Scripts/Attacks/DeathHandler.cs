@@ -20,10 +20,6 @@ public class DeathHandler : MonoBehaviour
         StopMoving();
         StopAttacking();
         
-        
-        
-        
-        
     }
 
     private void StopAttacking()

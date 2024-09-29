@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 541079805698391471}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Kitsune Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,6 +146,7 @@ MonoBehaviour:
   projectileSpeed: 1
   lifeTime: 10
   fireDirection: 0
+  isPlayerShooting: 0
   OnProjectileDisabled:
     m_PersistentCalls:
       m_Calls: []
