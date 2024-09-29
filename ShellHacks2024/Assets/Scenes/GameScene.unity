@@ -131,6 +131,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 649132626634235689, guid: b000cd46a909842b591e1438e86ce481, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b1db8dc471ea7504d88387b1bf941592, type: 2}
+    - target: {fileID: 5150125222872167232, guid: b000cd46a909842b591e1438e86ce481, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150125222872167232, guid: b000cd46a909842b591e1438e86ce481, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150125222872167232, guid: b000cd46a909842b591e1438e86ce481, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150125222872167232, guid: b000cd46a909842b591e1438e86ce481, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150125222872167232, guid: b000cd46a909842b591e1438e86ce481, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.36
+      objectReference: {fileID: 0}
     - target: {fileID: 6940757550313617349, guid: b000cd46a909842b591e1438e86ce481, type: 3}
       propertyPath: score
       value: 
@@ -1378,7 +1402,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1764487976}
   - {fileID: 506855162}
-  - {fileID: 457798933}
   - {fileID: 897850702}
   - {fileID: 3106879108197885678}
   - {fileID: 1865340229}
@@ -1386,3 +1409,4 @@ SceneRoots:
   - {fileID: 1145459006}
   - {fileID: 1787527182}
   - {fileID: 819562303}
+  - {fileID: 457798933}

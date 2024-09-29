@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0be23f701656c91478381f381aa841a0
+guid: aa03a847215c13840afc8a020796061d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,24 +106,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kitsuneIDLE-Sheet_midTails_0
+      name: kitsune-SheetIDLE_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c71ba5f60ecc8d4ca98ca94e4e22654
-      internalID: -659980064
+      spriteID: 3baab01feb8cd9c4f801f5345e1246cd
+      internalID: 1300808631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kitsuneIDLE-Sheet_midTails_1
+      name: kitsune-SheetIDLE_1
       rect:
         serializedVersion: 2
         x: 147
@@ -158,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5553ccd229f0213419819cddc52cf707
-      internalID: -1291788638
+      spriteID: 16979d1c0eae6ea4dac25396bbf925a0
+      internalID: -1215874417
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kitsuneIDLE-Sheet_midTails_2
+      name: kitsune-SheetIDLE_2
       rect:
         serializedVersion: 2
         x: 294
@@ -179,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a293376daf2860f44b94d55c03806d45
-      internalID: -557093652
+      spriteID: 307f8432344ab6643a5f0df40655a9f1
+      internalID: -725572821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kitsuneIDLE-Sheet_midTails_3
+      name: kitsune-SheetIDLE_3
       rect:
         serializedVersion: 2
         x: 441
@@ -200,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f85e72f80698676418389af54f356400
-      internalID: -1014434950
+      spriteID: 79c23fa4af41be946ad004cc3c111010
+      internalID: 1777703228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kitsuneIDLE-Sheet_midTails_4
+      name: kitsune-SheetIDLE_4
       rect:
         serializedVersion: 2
         x: 588
@@ -221,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dfa69ccea6e107468bfea56714d44fd
-      internalID: 1312307997
+      spriteID: aab40e04bf9c1f144be9ccfe4c354312
+      internalID: -845976903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: kitsuneIDLE-Sheet_midTails_5
+      name: kitsune-SheetIDLE_5
       rect:
         serializedVersion: 2
         x: 735
@@ -242,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36a3f7c01be05de489c317e319ad7565
-      internalID: 1800935551
+      spriteID: a5e6eff87a6ec0549b38841e4e42fc5a
+      internalID: -654095348
       vertices: []
       indices: 
       edges: []
@@ -259,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      kitsuneIDLE-Sheet_midTails_0: -659980064
-      kitsuneIDLE-Sheet_midTails_1: -1291788638
-      kitsuneIDLE-Sheet_midTails_2: -557093652
-      kitsuneIDLE-Sheet_midTails_3: -1014434950
-      kitsuneIDLE-Sheet_midTails_4: 1312307997
-      kitsuneIDLE-Sheet_midTails_5: 1800935551
+      kitsune-SheetIDLE_0: 1300808631
+      kitsune-SheetIDLE_1: -1215874417
+      kitsune-SheetIDLE_2: -725572821
+      kitsune-SheetIDLE_3: 1777703228
+      kitsune-SheetIDLE_4: -845976903
+      kitsune-SheetIDLE_5: -654095348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
