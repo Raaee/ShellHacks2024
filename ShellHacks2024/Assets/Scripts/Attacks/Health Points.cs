@@ -13,7 +13,7 @@ public class HealthPoints : MonoBehaviour
 
     [HideInInspector] public UnityEvent OnDead;
     [HideInInspector] public UnityEvent OnHurt;
-    [HideInInspector] public UnityEvent OnHealthChange; 
+    [HideInInspector] public UnityEvent OnHealthChange;
 
     public virtual void Start()
     {
