@@ -19,6 +19,7 @@ public class PlayerHealthPoints : HealthPoints
     {
         OnHealthChange?.Invoke();
         OnDead?.Invoke();
+        Destroy(this.gameObject);
     }
 
     public override void ResetHealth()

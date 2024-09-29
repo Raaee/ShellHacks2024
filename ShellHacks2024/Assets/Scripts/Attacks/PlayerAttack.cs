@@ -21,7 +21,7 @@ public class PlayerAttack : Ability
         GameObject go = Instantiate(projectilePrefab, parent);
         go.transform.position = firePoint.position;
         NewProjectile projectile = go.GetComponent<NewProjectile>();
-        projectile.CurrentDamage = currentDamage;
+        projectile.CurrentDamage = maxDamage;
     }
 
     private void ShootIfActive()

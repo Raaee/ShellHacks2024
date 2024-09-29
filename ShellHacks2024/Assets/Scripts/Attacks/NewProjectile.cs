@@ -56,7 +56,9 @@ public class NewProjectile : MonoBehaviour
             if(projectileHealth.IsDead())
             {
                 projectileHealth.Die();
-            }            
+            }
+            
+                      
         }
         else if (collider.gameObject.CompareTag(PLAYER_TAG)) // ignore player proj when hitting player
         {
@@ -103,6 +105,7 @@ public class NewProjectile : MonoBehaviour
     public float GetCurrentSpeed() {
         return projectileSpeed;
     }
+
     public void IncreaseSpeed(int newSpeed) {
         projectileSpeed = newSpeed;
         Debug.Log("Speed" + projectileSpeed);
