@@ -148,6 +148,9 @@ MonoBehaviour:
   OnProjectileDisabled:
     m_PersistentCalls:
       m_Calls: []
+  OnRemoveHeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7122149346349313955
 GameObject:
   m_ObjectHideFlags: 0
