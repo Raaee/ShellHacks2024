@@ -4,34 +4,29 @@ using UnityEngine;
 
 public class DeathHandler : MonoBehaviour
 {
-    private ProjectileHealthPoints projectileHealthPoints;
-    private SpriteRenderer spriteRenderer;
+    private PlayerHealthPoints playerHealthPoints;
+    [SerializeField] private Canvas deathPanel;
+    
   
 
     private void Awake()
     {
-        projectileHealthPoints = GetComponent<ProjectileHealthPoints>();
-        projectileHealthPoints.OnDead.AddListener(OnHandleDead);
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        playerHealthPoints = GetComponent<PlayerHealthPoints>();
+        deathPanel.enabled = false;
+        playerHealthPoints.OnDead.AddListener(OnHandleDead);
+        
     }
     
     private void OnHandleDead()
     {
-        StopMoving();
-        StopAttacking();
+        
+        deathPanel.enabled = true;
+        Time.timeScale = 0f;
+
         
     }
 
-    private void StopAttacking()
-    {
-     
-    }
-
-    private void StopMoving()
-    {
-        //Enemy Movement
-
-    }
+  
 
     
 
