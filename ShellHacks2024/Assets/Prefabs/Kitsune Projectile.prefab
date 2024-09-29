@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01537e532af2edd41a920fab17dd5319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 3
+  projectileSpeed: 5
   isPlayerShooting: 0
   OnProjectileDisabled:
     m_PersistentCalls:

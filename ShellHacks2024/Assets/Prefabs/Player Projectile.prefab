@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19e95344721fc94ebc93887d6a3cb85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
-  <currentHp>k__BackingField: 100
+  maxHp: 2
+  <currentHp>k__BackingField: 0
   OnDead:
     m_PersistentCalls:
       m_Calls: []
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01537e532af2edd41a920fab17dd5319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 20
+  projectileSpeed: 15
   isPlayerShooting: 1
   OnProjectileDisabled:
     m_PersistentCalls:

@@ -118,7 +118,8 @@ MonoBehaviour:
   score: {fileID: 8360577746474523133}
   points: 0
   timerSpeedMultiplier: 3
-  speedUpInterval: 150
+  speedUpInterval: 50
+  wallInterval: 75
   OnSpeedUpInterval:
     m_PersistentCalls:
       m_Calls: []

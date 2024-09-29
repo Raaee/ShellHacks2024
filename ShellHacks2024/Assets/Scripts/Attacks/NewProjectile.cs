@@ -47,7 +47,6 @@ public class NewProjectile : MonoBehaviour
         {
             
             ProjectileHealthPoints projectileHealth = collider.gameObject.GetComponent<ProjectileHealthPoints>();
-            Debug.Log("kitsune collision");
             if (!projectileHealth)
             {
                 return;
@@ -57,11 +56,7 @@ public class NewProjectile : MonoBehaviour
             if(projectileHealth.IsDead())
             {
                 projectileHealth.Die();
-            }
-
-            // Disable the projectile after it has hit an enemy
-            //DisableProjectile();
-            
+            }            
         }
         else if (collider.gameObject.CompareTag(PLAYER_TAG)) // ignore player proj when hitting player
         {
@@ -71,7 +66,6 @@ public class NewProjectile : MonoBehaviour
             }
 
             PlayerHealthPoints potentialPlayerHealth = collider.gameObject.GetComponent<PlayerHealthPoints>();
-            Debug.Log("player collision");
 
             if (!potentialPlayerHealth)
             {
@@ -84,13 +78,12 @@ public class NewProjectile : MonoBehaviour
             {
                 potentialPlayerHealth.Die();
             }
-
+            DisableProjectile();
         }
         else if (collider.gameObject.CompareTag(Player_Proj_TAG))
         {
 
             ProjectileHealthPoints playerProjectileHealth = collider.gameObject.GetComponent<ProjectileHealthPoints>();
-            Debug.Log("player proj collision");
 
             if (!playerProjectileHealth)
             {
