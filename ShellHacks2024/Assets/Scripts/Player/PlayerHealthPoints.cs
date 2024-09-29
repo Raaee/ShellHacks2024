@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class PlayerHealthPoints : HealthPoints
 {
     [SerializeField] private DamageFlash damageFlash;
+    
     public override void Start()
     {
         base.Start();  

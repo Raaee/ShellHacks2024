@@ -17,7 +17,9 @@ public class PauseMenu : MonoBehaviour
         inputManager = FindObjectOfType<InputManager>();
         inputManager.OnPause.AddListener(ShowPauseMenu);
     }
-   
+
+
+  
 
     private void ShowPauseMenu()
     {
@@ -30,13 +32,17 @@ public class PauseMenu : MonoBehaviour
             // Shows the cursor
             setScoreInMenu();
 
+   
+
+
         }
         // Otherwise, resume the game and hide the menu
         else
         {
             Time.timeScale = 1f;
             pauseMenu.SetActive(false);
-           
+
+            
         }
 
     }
